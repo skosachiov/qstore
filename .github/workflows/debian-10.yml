@@ -14,4 +14,5 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v3
-      - run: sudo apt -y install ansible
+      - run: apt update
+      - run: apt -y install ansible
