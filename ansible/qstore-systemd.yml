@@ -1,0 +1,62 @@
+---
+- name: Qstore userspace
+  hosts: all
+  connection: local
+
+  tasks:
+
+  - name: Qstore systemd services @qstore_systemd_services
+    ignore_errors: "{{ansible_check_mode}}"
+    block:
+      - name: Qstore systemd service Mkdir config @qstore_systemd_services
+        file:
+          dest: /usr/local/etc/qstore
+          state: directory
+      - name: Qstore systemd service Copy config @qstore_systemd_services
+        copy:
+          dest: /usr/local/etc/qstore/qstore.json
+          src: ../qstore.conf
+          mode: 0644
+      - name: Qstore systemd service Mkdir playbook @qstore_systemd_services
+        file:
+          dest: /usr/local/lib/qstore
+          state: directory
+      - name: Qstore systemd service Copy playbook @qstore_systemd_services
+        copy:
+          dest: /usr/local/lib/qstore/qstore-playbook.yml
+          src: qstore-playbook.yml
+          mode: 0644
+      - name: Qstore systemd services Copy service @qstore_systemd_services
+        copy:
+          dest: /usr/lib/systemd/system/qstore.service
+          content: |
+            [Unit]
+            Description=Qstore Service
+            [Service]
+            BusName=org.freedesktop.qstore
+            Type=oneshot
+            TimeoutSec=infinity
+            ExecStart=ansible-playbook --connection=local -i localhost, /usr/local/lib/qstore/qstore-playbook.yml
+          mode: 0644
+      - name: Qstore systemd services Copy link @qstore_systemd_services
+        file:
+          src: /usr/lib/systemd/system/qstore.service
+          dest: /usr/lib/systemd/system/dbus-org.freedesktop.qstore.service
+          state: link
+    tags:
+      - qstore_systemd_services
+
+  - name: Qstore dbus services @qsore_dbus_services
+    ignore_errors: "{{ansible_check_mode}}"
+    block:
+      - name: Qstore dbus services Copy @qstore_dbus_services
+        copy:
+          dest: /usr/share/dbus-1/system-services/org.freedesktop.qstore.service
+          content: |
+            [D-BUS Service]
+            Name=org.freedesktop.qstore
+            Exec=/bin/false
+            SystemdService=dbus-org.freedesktop.qstore.service
+          mode: 0644
+    tags:
+      - qstore_dbus_services

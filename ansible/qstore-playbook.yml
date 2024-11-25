@@ -1,0 +1,102 @@
+---
+- name: Qstore runner
+  hosts: all
+  connection: local
+
+  tasks:
+  
+  - name: Qstore get json @qstore_get_json
+    set_fact:
+      qstore_conf: "{{ lookup('file','/usr/local/etc/qstore/qstore.json') | from_json }}"
+    tags:
+      - qstore_get_conf
+
+  - name: Qstore get json @qstore_get_json
+    ignore_errors: true
+    block: 
+      - name: Qstore get json Last @qstore_get_json
+        failed_when: false
+        changed_when: false
+        shell: last -w | head -n 1 | cut -f 1 -d ' '
+        register: qstore_username
+      - name: Qstore get json Get @qstore_get_json
+        failed_when: false
+        changed_when: false
+        uri:
+          url: "{{qstore_conf.server_url}}/html/post/{{qstore_username.stdout_lines[0]|lower}}@{{ansible_facts.nodename.split('.')[0]|lower}}.json"
+          method: GET
+          return_content: yes
+          status_code: 200
+          body_format: json
+        register: qstore_json
+      - name: Qstore get json Set @qstore_get_json
+        set_fact:
+          qstore_repo_apps:    "{{(qstore_json.content|from_json).values() | selectattr('type', 'equalto', 'repo')}}"
+          qstore_flatpak_apps: "{{(qstore_json.content|from_json).values() | selectattr('type', 'equalto', 'flatpak`')}}"
+          qstore_package_apps: "{{(qstore_json.content|from_json).values() | selectattr('type', 'equalto', 'package')}}"
+          qstore_ansible_apps: "{{(qstore_json.content|from_json).values() | selectattr('type', 'equalto', 'ansible')}}"
+        when:
+          - qstore_json.status == 200
+    tags:
+      - qstore_get_json
+
+  - name: Qstore repo apps @qstore_repo_apps
+    package:
+      name: "{{item.name}}"
+      state: latest
+    loop: "{{qstore_repo_apps | selectattr('approve', 'equalto', false)}}"
+    tags:
+      - qstore_repo_apps
+
+  - name: Qstore flatpak apps @qstore_flatpak_apps
+    command: "sudo -u {{qstore_username.stdout_lines[0]|lower}} flatpak --user install {{item.name}}"
+    loop: "{{qstore_flatpak_apps | selectattr('approve', 'equalto', false)}}"
+    tags:
+      - qstore_flatpak_apps
+
+  - name: Qstore package apps @qstore_package_apps
+    block:
+      - name: Qstore package apps Temp dir @qstore_package_apps
+        tempfile:
+          state: directory
+          suffix: install
+        register: tempdir
+      - name: Qstore package apps Get url @qstore_package_apps
+        get_url:
+          url: "{{item.url}}"
+          dest: "{{tempdir.path}}"
+        loop: "{{qstore_flatpak_apps | selectattr('approve', 'equalto', false)}}"
+      - name: Qstore package apps Install @qstore_package_apps
+        environment:
+          DEBIAN_FRONTEND: noninteractive
+        shell:
+          cmd: dpkg -i ./{{item.url|basename}}
+          chdir: "{{tempdir.path}}/"
+        loop: "{{qstore_flatpak_apps | selectattr('approve', 'equalto', false)}}"
+      - name:  Qstore package apps Rm tmp dir @qstore_package_apps
+        file:
+          path: "{{tempdir.path}}"
+          state: absent
+    tags:
+      - qstore_package_apps      
+      
+  - name: Qstore ansible apps @qstore_ansible_apps
+    block:
+      - name: Qstore ansible apps Temp dir @qstore_ansible_apps
+        tempfile:
+          state: directory
+          suffix: install
+        register: tempdir
+      - name: Qstore ansible apps Get url @qstore_ansible_apps
+        get_url:
+          url: "{{item.url}}"
+          dest: "{{tempdir.path}}"
+        loop: "{{qstore_ansible_apps | selectattr('approve', 'equalto', false)}}"
+      - include_tasks: "{{tempdir.path}}/{{item.url|basename}}"
+        loop: "{{qstore_ansible_apps | selectattr('approve', 'equalto', false)}}"
+      - name:  Qstore package apps Rm tmp dir @qstore_ansible_apps
+        file:
+          path: "{{tempdir.path}}"
+    tags:
+      - qstore_ansible_apps   
+

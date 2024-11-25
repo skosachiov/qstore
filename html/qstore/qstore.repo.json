@@ -1,0 +1,335 @@
+{
+    "apple": {
+        "name": "apple",
+        "category": "Education",
+        "approve": false,
+        "size": 68000000,
+        "image": "images/apple.png",
+        "type": "repo",
+        "description": "Indicator Bulletin - An applet that allows you intelligently search for and edit your clipboard content using regular expressions."
+    },
+    "bun": {
+        "name": "bun",
+        "category": "Office",
+        "approve": true,
+        "size": 71000000,
+        "image": "images/bun.png",
+        "type": "repo",
+        "description": "8 MacOS Like Docks for Ubuntu"
+    },
+    "eclipse": {
+        "name": "eclipse",
+        "category": "Science",
+        "approve": true,
+        "size": 8000000,
+        "image": "images/eclipse.png",
+        "type": "repo",
+        "description": "Eclipse - An open-source cross-platform IDE commonly mostly among Java developers."
+    },
+    "ecto": {
+        "name": "ecto",
+        "category": "Graphics",
+        "approve": true,
+        "size": 92000000,
+        "image": "images/ecto.png",
+        "type": "repo",
+        "description": "Network File Sharing - A file-sharing system developed for the sharing of files and directories between Unix/Linux systems."
+    },
+    "emacs": {
+        "name": "emacs",
+        "category": "Office",
+        "approve": true,
+        "size": 2000000,
+        "image": "images/emacs.png",
+        "type": "repo",
+        "description": "Emacs - A command-line text editor which is highly customizable."
+    },
+    "express": {
+        "name": "express",
+        "category": "Utility",
+        "approve": true,
+        "size": 8000000,
+        "image": "images/express.png",
+        "type": "repo",
+        "description": "Indicator Bulletin - An applet that allows you intelligently search for and edit your clipboard content using regular expressions."
+    },
+    "filezilla": {
+        "name": "filezilla",
+        "category": "Education",
+        "approve": true,
+        "size": 51000000,
+        "image": "images/filezilla.png",
+        "type": "repo",
+        "description": "Filezilla - A popular cross-platform FTP client that supports SSL/TLS connections."
+    },
+    "gimp": {
+        "name": "gimp",
+        "category": "Office",
+        "approve": false,
+        "size": 23000000,
+        "image": "images/gimp.png",
+        "type": "repo",
+        "description": "Gimp - An open-source image editor used for taking screenshots."
+    },
+    "go": {
+        "name": "go",
+        "category": "Video",
+        "approve": false,
+        "size": 13000000,
+        "image": "images/go.png",
+        "type": "repo",
+        "description": "Pale Moon - An open-source, Goanna-based web browser available for Linux."
+    },
+    "hadoop": {
+        "name": "hadoop",
+        "category": "Video",
+        "approve": true,
+        "size": 72000000,
+        "image": "images/hadoop.png",
+        "type": "repo",
+        "description": "SystemML - A flexible machine learning system that automatically scales to Spark and Hadoop clusters."
+    },
+    "inkscape": {
+        "name": "inkscape",
+        "category": "Utility",
+        "approve": false,
+        "size": 42000000,
+        "image": "images/inkscape.png",
+        "type": "repo",
+        "description": "Inkscape - An alternative to Adobe Illustrator."
+    },
+    "java": {
+        "name": "java",
+        "category": "Game",
+        "approve": true,
+        "size": 39000000,
+        "image": "images/java.png",
+        "type": "repo",
+        "description": "Cloud Sticky Notes - A free, simple, and customizable Java-based sticky note-taking application."
+    },
+    "ktor": {
+        "name": "ktor",
+        "category": "Settings",
+        "approve": false,
+        "size": 16000000,
+        "image": "images/ktor.png",
+        "type": "repo",
+        "description": "KTorrent - A BitTorrent application by KDE which allows you to download files using the BitTorrent protocol."
+    },
+    "logstash": {
+        "name": "logstash",
+        "category": "Game",
+        "approve": true,
+        "size": 8000000,
+        "image": "images/logstash.png",
+        "type": "repo",
+        "description": "Logstash - An open-source Linux based data logging and collection app."
+    },
+    "lua": {
+        "name": "lua",
+        "category": "System",
+        "approve": true,
+        "size": 32000000,
+        "image": "images/lua.png",
+        "type": "repo",
+        "description": "Luakit - A highly configurable browser based on the WebKit."
+    },
+    "markdown": {
+        "name": "markdown",
+        "category": "System",
+        "approve": false,
+        "size": 71000000,
+        "image": "images/markdown.png",
+        "type": "repo",
+        "description": "Laverna - A modern open-source Markdown editor with a sleek UI and a focus on user privacy."
+    },
+    "nano": {
+        "name": "nano",
+        "category": "Education",
+        "approve": false,
+        "size": 48000000,
+        "image": "images/nano.png",
+        "type": "repo",
+        "description": "Nano - An easy to use command-line based text editor."
+    },
+    "nim": {
+        "name": "nim",
+        "category": "Graphics",
+        "approve": true,
+        "size": 8000000,
+        "image": "images/nim.png",
+        "type": "repo",
+        "description": "Peek - A simple animated gif screen recorder for linux."
+    },
+    "ory": {
+        "name": "ory",
+        "category": "Settings",
+        "approve": true,
+        "size": 93000000,
+        "image": "images/ory.png",
+        "type": "repo",
+        "description": "QupZilla - A web browser which optimizes performance with memory consumption lower than most browsers."
+    },
+    "perl": {
+        "name": "perl",
+        "category": "Audio",
+        "approve": false,
+        "size": 81000000,
+        "image": "images/perl.png",
+        "type": "repo",
+        "description": "colordiff - A Perl script with colour and syntax highlighting which shows the difference between two files."
+    },
+    "pfsense": {
+        "name": "pfsense",
+        "category": "Audio",
+        "approve": false,
+        "size": 31000000,
+        "image": "images/pfsense.png",
+        "type": "repo",
+        "description": "pfSense - An open-source firewall and router based on FreeBSD."
+    },
+    "processing": {
+        "name": "processing",
+        "category": "Video",
+        "approve": true,
+        "size": 91000000,
+        "image": "images/processing.png",
+        "type": "repo",
+        "description": "Cecilia - An audio signal processing platform aimed at sound designers."
+    },
+    "python": {
+        "name": "python",
+        "category": "Video",
+        "approve": false,
+        "size": 70000000,
+        "image": "images/python.png",
+        "type": "repo",
+        "description": "Guake - A drop-down terminal found in Gnome desktops developed in python."
+    },
+    "qt": {
+        "name": "qt",
+        "category": "Video",
+        "approve": true,
+        "size": 2000000,
+        "image": "images/qt.png",
+        "type": "repo",
+        "description": "Qtractor - An audio multi-track app made for personal home use."
+    },
+    "rect": {
+        "name": "rect",
+        "category": "Graphics",
+        "approve": false,
+        "size": 87000000,
+        "image": "images/rect.png",
+        "type": "repo",
+        "description": "Network File Sharing - A file-sharing system developed for the sharing of files and directories between Unix/Linux systems."
+    },
+    "ros": {
+        "name": "ros",
+        "category": "Graphics",
+        "approve": false,
+        "size": 58000000,
+        "image": "images/ros.png",
+        "type": "repo",
+        "description": "Chromium - An lightweight open-source cross-platform web browser. Unlike Google Chrome, Chromium is fast."
+    },
+    "scala": {
+        "name": "scala",
+        "category": "Video",
+        "approve": false,
+        "size": 70000000,
+        "image": "images/scala.png",
+        "type": "repo",
+        "description": "GlusterFS - A scalable network filesystem built for data-intensive tasks like media streaming and cloud storage."
+    },
+    "slack": {
+        "name": "slack",
+        "category": "AudioVideo",
+        "approve": true,
+        "size": 44000000,
+        "image": "images/slack.png",
+        "type": "repo",
+        "description": "Slack - A real-time messaging, archiving and search for modern teams."
+    },
+    "ssh": {
+        "name": "ssh",
+        "category": "Game",
+        "approve": true,
+        "size": 30000000,
+        "image": "images/ssh.png",
+        "type": "repo",
+        "description": "Feathur - An open-source control panel for administrators and individual users. Feathur is controlled using SSH."
+    },
+    "tex": {
+        "name": "tex",
+        "category": "Office",
+        "approve": false,
+        "size": 73000000,
+        "image": "images/tex.png",
+        "type": "repo",
+        "description": "w3m - A free open-source text-based web browser and terminal pager."
+    },
+    "twitter": {
+        "name": "twitter",
+        "category": "AudioVideo",
+        "approve": true,
+        "size": 23000000,
+        "image": "images/twitter.png",
+        "type": "repo",
+        "description": "TwittVim - A command-line based twitter client that is a VIM plugin."
+    },
+    "ubuntu": {
+        "name": "ubuntu",
+        "category": "Video",
+        "approve": false,
+        "size": 88000000,
+        "image": "images/ubuntu.png",
+        "type": "repo",
+        "description": "8 MacOS Like Docks for Ubuntu"
+    },
+    "unity": {
+        "name": "unity",
+        "category": "Science",
+        "approve": false,
+        "size": 23000000,
+        "image": "images/unity.png",
+        "type": "repo",
+        "description": "Unity - A graphical desktop shell environment for Gnome desktops."
+    },
+    "unix": {
+        "name": "unix",
+        "category": "Game",
+        "approve": false,
+        "size": 35000000,
+        "image": "images/unix.png",
+        "type": "repo",
+        "description": "Twitter CLI - A powerful command-line based Twitter client for Unix systems."
+    },
+    "vim": {
+        "name": "vim",
+        "category": "Office",
+        "approve": false,
+        "size": 1000000,
+        "image": "images/vim.png",
+        "type": "repo",
+        "description": "TwittVim - A command-line based twitter client that is a VIM plugin."
+    },
+    "vsphere": {
+        "name": "vsphere",
+        "category": "Settings",
+        "approve": true,
+        "size": 60000000,
+        "image": "images/vsphere.png",
+        "type": "repo",
+        "description": "VMware vSphere - A popular server visualization app for building cloud infrastructure."
+    },
+    "xd": {
+        "name": "xd",
+        "category": "Audio",
+        "approve": true,
+        "size": 89000000,
+        "image": "images/xd.png",
+        "type": "repo",
+        "description": "PCManFM - A feature-rich file manager usually on LXDE desktops."
+    }
+}

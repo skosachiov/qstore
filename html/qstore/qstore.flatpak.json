@@ -1,0 +1,650 @@
+{
+    "angular": {
+        "name": "angular",
+        "category": "Network",
+        "approve": false,
+        "size": 68000000,
+        "image": "images/angular.png",
+        "type": "flatpak",
+        "description": "RubyMine Enjoy first-class support for Ruby 2.x and Rails 6.x, Sinatra, React, Angular, Puppet, Docker, and more com.jetbrains.RubyMine 2024.2.2 stable flathub"
+    },
+    "astro": {
+        "name": "astro",
+        "category": "System",
+        "approve": true,
+        "size": 59000000,
+        "image": "images/astro.png",
+        "type": "flatpak",
+        "description": "Astronum Program for simple astrological and numerological calculations com.github.alexkdeveloper.astronum 1.0.10 stable flathub"
+    },
+    "clion": {
+        "name": "clion",
+        "category": "Science",
+        "approve": true,
+        "size": 98000000,
+        "image": "images/clion.png",
+        "type": "flatpak",
+        "description": "CLion A cross-platform IDE for C and C++ com.jetbrains.CLion 2024.2.3 stable flathub"
+    },
+    "datagrip": {
+        "name": "datagrip",
+        "category": "AudioVideo",
+        "approve": false,
+        "size": 74000000,
+        "image": "images/datagrip.png",
+        "type": "flatpak",
+        "description": "DataGrip IntelliJ-based IDE for databases and SQL com.jetbrains.DataGrip 2024.2.2 stable flathub"
+    },
+    "dbeaver": {
+        "name": "dbeaver",
+        "category": "Network",
+        "approve": true,
+        "size": 30000000,
+        "image": "images/dbeaver.png",
+        "type": "flatpak",
+        "description": "MariaDB Client MariaDB client for DBeaver Community io.dbeaver.DBeaverCommunity.Client.mariadb  stable flathub"
+    },
+    "docker": {
+        "name": "docker",
+        "category": "System",
+        "approve": true,
+        "size": 54000000,
+        "image": "images/docker.png",
+        "type": "flatpak",
+        "description": "RubyMine Enjoy first-class support for Ruby 2.x and Rails 6.x, Sinatra, React, Angular, Puppet, Docker, and more com.jetbrains.RubyMine 2024.2.2 stable flathub"
+    },
+    "eclipse": {
+        "name": "eclipse",
+        "category": "Science",
+        "approve": false,
+        "size": 53000000,
+        "image": "images/eclipse.png",
+        "type": "flatpak",
+        "description": "Eclipse IDE for Java Developers The essential tools for any Java developer, including a Java IDE, a Git client, XML Editor, Maven and Gradle integration org.eclipse.Java 4.33 stable flathub"
+    },
+    "ecto": {
+        "name": "ecto",
+        "category": "System",
+        "approve": true,
+        "size": 32000000,
+        "image": "images/ecto.png",
+        "type": "flatpak",
+        "description": "Inkscape Vector Graphics Editor org.inkscape.Inkscape 1.4 stable flathub"
+    },
+    "elm": {
+        "name": "elm",
+        "category": "Game",
+        "approve": true,
+        "size": 43000000,
+        "image": "images/elm.png",
+        "type": "flatpak",
+        "description": "Helm Synthesizer Helm Synthesizer LV2/VST plugin org.freedesktop.LinuxAudio.Plugins.Helm 0.9.0 24.08 flathub"
+    },
+    "express": {
+        "name": "express",
+        "category": "Science",
+        "approve": false,
+        "size": 56000000,
+        "image": "images/express.png",
+        "type": "flatpak",
+        "description": "ExpressLRS Configurator Cross platform configuration tool for the ExpressLRS firmware org.expresslrs.ExpressLRSConfigurator 1.7.6 stable flathub"
+    },
+    "figma": {
+        "name": "figma",
+        "category": "Science",
+        "approve": true,
+        "size": 58000000,
+        "image": "images/figma.png",
+        "type": "flatpak",
+        "description": "Figma for Linux Web-based collaborative design tool io.github.Figma_Linux.figma_linux 0.11.3 stable flathub"
+    },
+    "filezilla": {
+        "name": "filezilla",
+        "category": "Graphics",
+        "approve": false,
+        "size": 42000000,
+        "image": "images/filezilla.png",
+        "type": "flatpak",
+        "description": "FileZilla Fast and reliable FTP client org.filezillaproject.Filezilla 3.66.1 stable flathub"
+    },
+    "flutter": {
+        "name": "flutter",
+        "category": "System",
+        "approve": false,
+        "size": 80000000,
+        "image": "images/flutter.png",
+        "type": "flatpak",
+        "description": "Flutter nmap GUI Fnmap is a GUI front end for the nmap (Network Mapper) com.krioltech.fnmap 1.2.1+2 stable flathub"
+    },
+    "ghost": {
+        "name": "ghost",
+        "category": "Audio",
+        "approve": true,
+        "size": 48000000,
+        "image": "images/ghost.png",
+        "type": "flatpak",
+        "description": "ghostwriter Distraction-free text editor for Markdown org.kde.ghostwriter 24.08.3 stable flathub"
+    },
+    "gimp": {
+        "name": "gimp",
+        "category": "Audio",
+        "approve": true,
+        "size": 68000000,
+        "image": "images/gimp.png",
+        "type": "flatpak",
+        "description": "GimpLensfun Lensfun Gimp plugin org.gimp.GIMP.Plugin.Lensfun 0.2.4 2-40 flathub"
+    },
+    "github": {
+        "name": "github",
+        "category": "Audio",
+        "approve": true,
+        "size": 60000000,
+        "image": "images/github.png",
+        "type": "flatpak",
+        "description": "vimix Video live mixer io.github.brunoherbelin.Vimix 0.8.3 stable flathub"
+    },
+    "gitlab": {
+        "name": "gitlab",
+        "category": "Development",
+        "approve": true,
+        "size": 89000000,
+        "image": "images/gitlab.png",
+        "type": "flatpak",
+        "description": "Text Pieces Developer's scratchpad io.gitlab.liferooter.TextPieces 4.1.0 stable flathub"
+    },
+    "goland": {
+        "name": "goland",
+        "category": "Office",
+        "approve": true,
+        "size": 51000000,
+        "image": "images/goland.png",
+        "type": "flatpak",
+        "description": "GoLand Capable and Ergonomic Go IDE com.jetbrains.GoLand 2024.2.3 stable flathub"
+    },
+    "go": {
+        "name": "go",
+        "category": "Audio",
+        "approve": true,
+        "size": 52000000,
+        "image": "images/go.png",
+        "type": "flatpak",
+        "description": "gopher64 Nintendo 64 Emulator io.github.gopher64.gopher64 v0.1.10 stable flathub"
+    },
+    "haskell": {
+        "name": "haskell",
+        "category": "Graphics",
+        "approve": false,
+        "size": 8000000,
+        "image": "images/haskell.png",
+        "type": "flatpak",
+        "description": "Haskell platform Sdk extension Extension providing the latest stable release of the Haskell platform org.freedesktop.Sdk.Extension.haskell 9.4.1 20.08 flathub"
+    },
+    "helm": {
+        "name": "helm",
+        "category": "Utility",
+        "approve": false,
+        "size": 4000000,
+        "image": "images/helm.png",
+        "type": "flatpak",
+        "description": "Helm Synthesizer Helm Synthesizer LV2/VST plugin org.freedesktop.LinuxAudio.Plugins.Helm 0.9.0 24.08 flathub"
+    },
+    "inkscape": {
+        "name": "inkscape",
+        "category": "Audio",
+        "approve": false,
+        "size": 66000000,
+        "image": "images/inkscape.png",
+        "type": "flatpak",
+        "description": "Inkscape Vector Graphics Editor org.inkscape.Inkscape 1.4 stable flathub"
+    },
+    "intellij": {
+        "name": "intellij",
+        "category": "Video",
+        "approve": false,
+        "size": 16000000,
+        "image": "images/intellij.png",
+        "type": "flatpak",
+        "description": "IntelliJ IDEA Ultimate Capable and Ergonomic Java IDE for Enterprise, Web and Mobile Development com.jetbrains.IntelliJ-IDEA-Ultimate 2024.2.4 stable flathub"
+    },
+    "java": {
+        "name": "java",
+        "category": "Office",
+        "approve": true,
+        "size": 30000000,
+        "image": "images/java.png",
+        "type": "flatpak",
+        "description": "WebStorm The smartest JavaScript IDE com.jetbrains.WebStorm 2024.2.2 stable flathub"
+    },
+    "javascript": {
+        "name": "javascript",
+        "category": "Graphics",
+        "approve": true,
+        "size": 89000000,
+        "image": "images/javascript.png",
+        "type": "flatpak",
+        "description": "WebStorm The smartest JavaScript IDE com.jetbrains.WebStorm 2024.2.2 stable flathub"
+    },
+    "ktor": {
+        "name": "ktor",
+        "category": "Utility",
+        "approve": true,
+        "size": 97000000,
+        "image": "images/ktor.png",
+        "type": "flatpak",
+        "description": "KTorrent BitTorrent Client org.kde.ktorrent 24.08.3 stable flathub"
+    },
+    "latex": {
+        "name": "latex",
+        "category": "Graphics",
+        "approve": false,
+        "size": 1000000,
+        "image": "images/latex.png",
+        "type": "flatpak",
+        "description": "Texmaker Latex editor net.xm1math.Texmaker 6.0.0 stable flathub"
+    },
+    "llvm": {
+        "name": "llvm",
+        "category": "AudioVideo",
+        "approve": false,
+        "size": 33000000,
+        "image": "images/llvm.png",
+        "type": "flatpak",
+        "description": "LLVM 19 LLVM 19 stable compiler and tools extension for the flatpak Freedesktop SDK org.freedesktop.Sdk.Extension.llvm19 19.1.3 24.08 flathub"
+    },
+    "mariadb": {
+        "name": "mariadb",
+        "category": "Network",
+        "approve": true,
+        "size": 28000000,
+        "image": "images/mariadb.png",
+        "type": "flatpak",
+        "description": "MariaDB Client MariaDB client for DBeaver Community io.dbeaver.DBeaverCommunity.Client.mariadb  stable flathub"
+    },
+    "markdown": {
+        "name": "markdown",
+        "category": "System",
+        "approve": false,
+        "size": 50000000,
+        "image": "images/markdown.png",
+        "type": "flatpak",
+        "description": "ghostwriter Distraction-free text editor for Markdown org.kde.ghostwriter 24.08.3 stable flathub"
+    },
+    "maven": {
+        "name": "maven",
+        "category": "Education",
+        "approve": true,
+        "size": 5000000,
+        "image": "images/maven.png",
+        "type": "flatpak",
+        "description": "Eclipse IDE for Java Developers The essential tools for any Java developer, including a Java IDE, a Git client, XML Editor, Maven and Gradle integration org.eclipse.Java 4.33 stable flathub"
+    },
+    "meteor": {
+        "name": "meteor",
+        "category": "Audio",
+        "approve": false,
+        "size": 90000000,
+        "image": "images/meteor.png",
+        "type": "flatpak",
+        "description": "Nanosaur Send dinosaur eggs to the future before a meteor hits the Earth! io.jor.nanosaur 1.4.4 stable flathub"
+    },
+    "nano": {
+        "name": "nano",
+        "category": "Network",
+        "approve": true,
+        "size": 32000000,
+        "image": "images/nano.png",
+        "type": "flatpak",
+        "description": "Nanosaur 2: Hatchling Fly a pterodactyl who\u2019s loaded with hi-tech weaponry io.jor.nanosaur2 2.1.0 stable flathub"
+    },
+    "neovim": {
+        "name": "neovim",
+        "category": "AudioVideo",
+        "approve": false,
+        "size": 71000000,
+        "image": "images/neovim.png",
+        "type": "flatpak",
+        "description": "Neovim Vim-fork focused on extensibility and usability io.neovim.nvim 0.10.2 stable flathub"
+    },
+    "nimble": {
+        "name": "nimble",
+        "category": "System",
+        "approve": false,
+        "size": 9000000,
+        "image": "images/nimble.png",
+        "type": "flatpak",
+        "description": "OpenClonk Multiplayer action game where you control small and nimble humanoids org.openclonk.OpenClonk 8.1 stable flathub"
+    },
+    "nim": {
+        "name": "nim",
+        "category": "Education",
+        "approve": true,
+        "size": 4000000,
+        "image": "images/nim.png",
+        "type": "flatpak",
+        "description": "OpenClonk Multiplayer action game where you control small and nimble humanoids org.openclonk.OpenClonk 8.1 stable flathub"
+    },
+    "okta": {
+        "name": "okta",
+        "category": "AudioVideo",
+        "approve": false,
+        "size": 19000000,
+        "image": "images/okta.png",
+        "type": "flatpak",
+        "description": "Okta CLI The Okta CLI is the easiest way to get started with Okta! com.okta.developer.CLI 0.10.0 stable flathub"
+    },
+    "opencl": {
+        "name": "opencl",
+        "category": "AudioVideo",
+        "approve": false,
+        "size": 1000000,
+        "image": "images/opencl.png",
+        "type": "flatpak",
+        "description": "OpenClonk Multiplayer action game where you control small and nimble humanoids org.openclonk.OpenClonk 8.1 stable flathub"
+    },
+    "perl": {
+        "name": "perl",
+        "category": "AudioVideo",
+        "approve": false,
+        "size": 53000000,
+        "image": "images/perl.png",
+        "type": "flatpak",
+        "description": "Perl Plugin Provides a scripting interface in Perl io.github.Hexchat.Plugin.Perl  23.08 flathub"
+    },
+    "phpstorm": {
+        "name": "phpstorm",
+        "category": "Settings",
+        "approve": false,
+        "size": 71000000,
+        "image": "images/phpstorm.png",
+        "type": "flatpak",
+        "description": "PhpStorm PHP IDE for Professional Development com.jetbrains.PhpStorm 2024.2.4 stable flathub"
+    },
+    "podman": {
+        "name": "podman",
+        "category": "Settings",
+        "approve": false,
+        "size": 66000000,
+        "image": "images/podman.png",
+        "type": "flatpak",
+        "description": "Podman Desktop Manage Podman and other container engines from a single UI io.podman_desktop.PodmanDesktop 1.14.1 stable flathub"
+    },
+    "postman": {
+        "name": "postman",
+        "category": "Education",
+        "approve": false,
+        "size": 25000000,
+        "image": "images/postman.png",
+        "type": "flatpak",
+        "description": "Postman Platform for building and using APIs com.getpostman.Postman 11.19.0 stable flathub"
+    },
+    "processing": {
+        "name": "processing",
+        "category": "Office",
+        "approve": true,
+        "size": 26000000,
+        "image": "images/processing.png",
+        "type": "flatpak",
+        "description": "Processing IDE Open-source software prototyping platform org.processing.processingide 4.3 stable flathub"
+    },
+    "pulsar": {
+        "name": "pulsar",
+        "category": "Video",
+        "approve": false,
+        "size": 58000000,
+        "image": "images/pulsar.png",
+        "type": "flatpak",
+        "description": "Pulsar Modern, modifiable editor dev.pulsar_edit.Pulsar 1.122.0 stable flathub"
+    },
+    "putty": {
+        "name": "putty",
+        "category": "Education",
+        "approve": false,
+        "size": 46000000,
+        "image": "images/putty.png",
+        "type": "flatpak",
+        "description": "PuTTY SSH, Telnet and Rlogin client uk.org.greenend.chiark.sgtatham.putty 0.81 stable flathub"
+    },
+    "pycharm": {
+        "name": "pycharm",
+        "category": "Utility",
+        "approve": false,
+        "size": 74000000,
+        "image": "images/pycharm.png",
+        "type": "flatpak",
+        "description": "Python 2.7 Extension for PyCharm com.jetbrains.PyCharm.Extensions.Python2-7 2.7.18 20.08 flathub"
+    },
+    "python": {
+        "name": "python",
+        "category": "Utility",
+        "approve": false,
+        "size": 18000000,
+        "image": "images/python.png",
+        "type": "flatpak",
+        "description": "Spyder The Scientific Python Development Environment org.spyder_ide.spyder v6.0.2 stable flathub"
+    },
+    "qt": {
+        "name": "qt",
+        "category": "Education",
+        "approve": true,
+        "size": 85000000,
+        "image": "images/qt.png",
+        "type": "flatpak",
+        "description": "qTsConverter A simple tool to convert qt translation file (ts) to other format (xlsx / csv) and vice versa. org.guerinoni.qTsConverter 4.4.0 stable flathub"
+    },
+    "railway": {
+        "name": "railway",
+        "category": "System",
+        "approve": false,
+        "size": 77000000,
+        "image": "images/railway.png",
+        "type": "flatpak",
+        "description": "Railway Find all your travel information de.schmidhuberj.DieBahn 2.7.1 stable flathub"
+    },
+    "react": {
+        "name": "react",
+        "category": "Network",
+        "approve": true,
+        "size": 75000000,
+        "image": "images/react.png",
+        "type": "flatpak",
+        "description": "RubyMine Enjoy first-class support for Ruby 2.x and Rails 6.x, Sinatra, React, Angular, Puppet, Docker, and more com.jetbrains.RubyMine 2024.2.2 stable flathub"
+    },
+    "rect": {
+        "name": "rect",
+        "category": "Audio",
+        "approve": true,
+        "size": 21000000,
+        "image": "images/rect.png",
+        "type": "flatpak",
+        "description": "GimpLensfun GimpLensfun is a Gimp plugin to correct lens distortion using the lensfun library and database. org.gimp.GIMP.Plugin.Lensfun 0.2.4 2-3.36 flathub"
+    },
+    "redis": {
+        "name": "redis",
+        "category": "Office",
+        "approve": false,
+        "size": 41000000,
+        "image": "images/redis.png",
+        "type": "flatpak",
+        "description": "Redis Insight Developer GUI for Redis, by Redis com.redis.RedisInsight 2.60.0.127946 stable flathub"
+    },
+    "rider": {
+        "name": "rider",
+        "category": "Settings",
+        "approve": true,
+        "size": 59000000,
+        "image": "images/rider.png",
+        "type": "flatpak",
+        "description": "Rider Fast & powerful, cross platform .NET IDE com.jetbrains.Rider 2024.2.7 stable flathub"
+    },
+    "ros": {
+        "name": "ros",
+        "category": "Audio",
+        "approve": false,
+        "size": 83000000,
+        "image": "images/ros.png",
+        "type": "flatpak",
+        "description": "Textosaurus Simple cross-platform text editor based on Qt and QScintilla io.github.martinrotter.textosaurus 0.9.12 stable flathub"
+    },
+    "rubymine": {
+        "name": "rubymine",
+        "category": "Graphics",
+        "approve": false,
+        "size": 14000000,
+        "image": "images/rubymine.png",
+        "type": "flatpak",
+        "description": "RubyMine Enjoy first-class support for Ruby 2.x and Rails 6.x, Sinatra, React, Angular, Puppet, Docker, and more com.jetbrains.RubyMine 2024.2.2 stable flathub"
+    },
+    "ruby": {
+        "name": "ruby",
+        "category": "Office",
+        "approve": false,
+        "size": 25000000,
+        "image": "images/ruby.png",
+        "type": "flatpak",
+        "description": "RubyMine Enjoy first-class support for Ruby 2.x and Rails 6.x, Sinatra, React, Angular, Puppet, Docker, and more com.jetbrains.RubyMine 2024.2.2 stable flathub"
+    },
+    "rust": {
+        "name": "rust",
+        "category": "Development",
+        "approve": true,
+        "size": 70000000,
+        "image": "images/rust.png",
+        "type": "flatpak",
+        "description": "RustDesk Secure remote desktop access com.rustdesk.RustDesk 1.3.2 stable flathub"
+    },
+    "sema": {
+        "name": "sema",
+        "category": "AudioVideo",
+        "approve": true,
+        "size": 51000000,
+        "image": "images/sema.png",
+        "type": "flatpak",
+        "description": "SemantiK English Language Pack English language pack for SemantiK net.krafting.SemantiK.Lang.English 1.0.0 stable flathub"
+    },
+    "sketch": {
+        "name": "sketch",
+        "category": "Network",
+        "approve": false,
+        "size": 44000000,
+        "image": "images/sketch.png",
+        "type": "flatpak",
+        "description": "TeX Match Find LaTeX symbols by sketching fyi.zoey.TeX-Match 1.2.0 stable flathub"
+    },
+    "slack": {
+        "name": "slack",
+        "category": "Settings",
+        "approve": false,
+        "size": 53000000,
+        "image": "images/slack.png",
+        "type": "flatpak",
+        "description": "Slack Business communication com.slack.Slack 4.41.96 stable flathub"
+    },
+    "spyder": {
+        "name": "spyder",
+        "category": "Science",
+        "approve": false,
+        "size": 66000000,
+        "image": "images/spyder.png",
+        "type": "flatpak",
+        "description": "Spyder The Scientific Python Development Environment org.spyder_ide.spyder v6.0.2 stable flathub"
+    },
+    "ssh": {
+        "name": "ssh",
+        "category": "Office",
+        "approve": true,
+        "size": 33000000,
+        "image": "images/ssh.png",
+        "type": "flatpak",
+        "description": "SSH-MITM SSH-MITM - ssh audits made simple at.ssh_mitm.server 5.0.0 stable flathub"
+    },
+    "tex": {
+        "name": "tex",
+        "category": "Video",
+        "approve": false,
+        "size": 94000000,
+        "image": "images/tex.png",
+        "type": "flatpak",
+        "description": "ghostwriter Distraction-free text editor for Markdown org.kde.ghostwriter 24.08.3 stable flathub"
+    },
+    "unity": {
+        "name": "unity",
+        "category": "Settings",
+        "approve": false,
+        "size": 3000000,
+        "image": "images/unity.png",
+        "type": "flatpak",
+        "description": "Unity Hub Manage game engine installations com.unity.UnityHub 3.9.1 stable flathub"
+    },
+    "vala": {
+        "name": "vala",
+        "category": "Science",
+        "approve": false,
+        "size": 92000000,
+        "image": "images/vala.png",
+        "type": "flatpak",
+        "description": "Vala Sdk extension An object-oriented programming language with a self-hosting compiler that generates C code and uses the GObject system org.freedesktop.Sdk.Extension.vala 0.56.6 21.08 flathub"
+    },
+    "vault": {
+        "name": "vault",
+        "category": "Graphics",
+        "approve": true,
+        "size": 59000000,
+        "image": "images/vault.png",
+        "type": "flatpak",
+        "description": "Vaults Keep important files safe io.github.mpobaschnig.Vaults 0.8.0 stable flathub"
+    },
+    "vim": {
+        "name": "vim",
+        "category": "Development",
+        "approve": false,
+        "size": 26000000,
+        "image": "images/vim.png",
+        "type": "flatpak",
+        "description": "vimix Video live mixer io.github.brunoherbelin.Vimix 0.8.3 stable flathub"
+    },
+    "visualstudio": {
+        "name": "visualstudio",
+        "category": "Development",
+        "approve": false,
+        "size": 71000000,
+        "image": "images/visualstudio.png",
+        "type": "flatpak",
+        "description": "Podman (remote client) A tool for VS Code for managing OCI containers and pods com.visualstudio.code.tool.podman 5.2.5 stable flathub"
+    },
+    "webstorm": {
+        "name": "webstorm",
+        "category": "Science",
+        "approve": false,
+        "size": 33000000,
+        "image": "images/webstorm.png",
+        "type": "flatpak",
+        "description": "WebStorm The smartest JavaScript IDE com.jetbrains.WebStorm 2024.2.2 stable flathub"
+    },
+    "xd": {
+        "name": "xd",
+        "category": "Game",
+        "approve": true,
+        "size": 84000000,
+        "image": "images/xd.png",
+        "type": "flatpak",
+        "description": "AstroImpact Defend the planet from asteroids! com.voxdsp.AstroImpact 1.0 stable flathub"
+    },
+    "xml": {
+        "name": "xml",
+        "category": "Science",
+        "approve": true,
+        "size": 5000000,
+        "image": "images/xml.png",
+        "type": "flatpak",
+        "description": "Eclipse IDE for Java Developers The essential tools for any Java developer, including a Java IDE, a Git client, XML Editor, Maven and Gradle integration org.eclipse.Java 4.33 stable flathub"
+    },
+    "zig": {
+        "name": "zig",
+        "category": "Graphics",
+        "approve": false,
+        "size": 86000000,
+        "image": "images/zig.png",
+        "type": "flatpak",
+        "description": "Zig SDK Extension Zig toolchain org.freedesktop.Sdk.Extension.ziglang 0.13.0 23.08 flathub"
+    }
+}

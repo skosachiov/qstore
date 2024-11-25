@@ -1,0 +1,22 @@
+{
+    "1c-8.3.11": {
+        "name": "1c-8.3.11",
+        "category": "Office",
+        "approve": false,
+        "size": 7500000,
+        "image": "images/1c.png",
+        "type": "ansible",
+        "url": "ansible/1c-8.3.11.yml",
+        "description": "1C:Enterprise is a full-stack, low-code platform that provides infrastructure and tools for the development of business applications, such as ERP, POS, WMS, or other custom corporate software."
+    },
+    "1c-8.3.12": {
+        "name": "1c-8.3.12",
+        "category": "Office",
+        "approve": false,
+        "size": 7900000,
+        "image": "images/1c.png",
+        "type": "ansible",
+        "url": "ansible/1c-8.3.12.yml",
+        "description": "1C:Enterprise is a full-stack, low-code platform that provides infrastructure and tools for the development of business applications, such as ERP, POS, WMS, or other custom corporate software."
+    } 
+}

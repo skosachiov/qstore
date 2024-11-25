@@ -1,0 +1,1 @@
+{"soft": [{"name": "gimp", "category": "graphics", "approve": false, "size": 100000000, "image": "images/gimp.png", "type": "package"}, {"name": "compas", "category": "cad", "approve": true, "size": 200000000, "image": "images/compas.png", "type": "flatpak"}]}

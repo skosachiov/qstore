@@ -1,0 +1,22 @@
+{
+    "hello": {
+        "name": "hello",
+        "category": "Network",
+        "approve": false,
+        "size": 6800000,
+        "image": "images/default.png",
+        "type": "package",
+        "url": "pkgs/hello_2.10-3_amd64.deb",
+        "description": "The GNU hello program produces a familiar, friendly greeting. It allows non-programmers to use a classic computer science tool which would otherwise be unavailable to them."
+    },
+    "proxytunnel": {
+        "name": "proxytunnel",
+        "category": "System",
+        "approve": true,
+        "size": 59000000,
+        "image": "images/default.png",
+        "type": "package",
+        "url": "pkgs/proxytunnel_1.10.20210604-2_amd64.deb",
+        "description": "Proxytunnel creates tunnels through HTTP(S) proxies for any TCP based protocol. It comes in handy when one sits behind a firewall that allows for HTTP(S) traffic only."
+    }
+}
