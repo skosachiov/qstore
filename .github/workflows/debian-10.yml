@@ -1,18 +1,18 @@
-name: debian-10
+# name: debian-10
 
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+# on:
+#   push:
+#     branches: [main]
+#   pull_request:
+#     branches: [main]
 
-jobs:
+# jobs:
 
-  test:
-    runs-on: ubuntu-latest
-    container: debian:10
-    timeout-minutes: 5
-    steps:
-      - uses: actions/checkout@v3
-      - run: apt update
-      - run: apt -y install ansible
+#   test:
+#     runs-on: ubuntu-latest
+#     container: debian:10
+#     timeout-minutes: 5
+#     steps:
+#       - uses: actions/checkout@v3
+#       - run: apt update
+#       - run: apt -y install ansible

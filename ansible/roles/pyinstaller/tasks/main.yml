@@ -1,0 +1,19 @@
+- name: Install binutils
+  package:
+    name:
+      - python3-dev 
+      - binutils
+    state: present
+
+- name: Create venv
+  pip:
+     virtualenv: .venv
+     virtualenv_python: python3
+
+- name: Install pyinstaller
+  pip:
+    name:
+      - pyqt6 
+      - pyinstaller 
+    state: present
+    virtualenv: .venv

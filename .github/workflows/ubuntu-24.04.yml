@@ -11,6 +11,12 @@ jobs:
   test:
     runs-on: ubuntu-24.04
     timeout-minutes: 5
+
+    env:
+      DEBIAN_FRONTEND: noninteractive
+
     steps:
       - uses: actions/checkout@v3
-      - run: sudo apt -y install ansible
+      - run: apt update
+      - run: apt -y install ansible
+      - run: /usr/bin/ansible-playbook ansible/build-deb.yml
