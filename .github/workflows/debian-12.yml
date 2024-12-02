@@ -1,18 +1,19 @@
-# name: debian-12
+name: debian-12
 
-# on:
-#   push:
-#     branches: [main]
-#   pull_request:
-#     branches: [main]
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
-# jobs:
+jobs:
 
-#   test:
-#     runs-on: ubuntu-latest
-#     container: debian:12
-#     timeout-minutes: 5
-#     steps:
-#       - uses: actions/checkout@v3
-#       - run: apt update
-#       - run: apt -y install ansible
+  test:
+    runs-on: ubuntu-latest
+    container: debian:12
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v3
+      - run: apt update
+      - run: apt -y install ansible
+      - run: /usr/bin/ansible-playbook ansible/build-deb.yml
