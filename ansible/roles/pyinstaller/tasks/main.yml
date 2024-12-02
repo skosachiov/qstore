@@ -12,7 +12,7 @@
       - pyinstaller 
     state: present
     virtualenv: .venv
-    virtualenv_python: python3
+    virtualenv_command: python3 -m venv
 
 - name: Create pkg
   command: .venv/bin/pyinstaller qstore.py
