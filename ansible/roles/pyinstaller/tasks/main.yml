@@ -7,14 +7,12 @@
 
 - name: Create venv
   pip:
-     virtualenv: .venv
-     virtualenv_python: python3
-
-- name: Install pyinstaller
-  pip:
     name:
       - pyqt6 
       - pyinstaller 
     state: present
     virtualenv: .venv
-    
+    virtualenv_python: python3
+
+- name: Create pkg
+  command: .venv/bin/pyinstaller qstore.py
