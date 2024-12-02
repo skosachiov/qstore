@@ -13,4 +13,4 @@
   command: .venv/bin/pip install pyqt6 pyinstaller 
   
 - name: Create pkg
-  command: .venv/bin/pyinstaller qstore.py
+  command: .venv/bin/pyinstaller ../qstore.py
