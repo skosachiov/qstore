@@ -20,9 +20,9 @@
 
 - name: Debian 10
   shell: |
-    apt install build-essential
-    .venv/bin/pip install --upgrade pip 
-    .venv/bin/pip install pyqt6==6.5 pyinstaller
+    apt install build-essential;
+    .venv/bin/pip install --upgrade pip; 
+    .venv/bin/pip install pyqt6==6.5 pyinstaller;
   when: ansible_os_family == 'Debian' and ansible_lsb.release == '10'
 
 - name: Install in venv
