@@ -16,7 +16,7 @@ jobs:
       DEBIAN_FRONTEND: noninteractive
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - run: sudo apt update
       - run: sudo apt -y install ansible
       - run: sudo /usr/bin/ansible-playbook ansible/build-deb.yml
