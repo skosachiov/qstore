@@ -19,10 +19,13 @@
   command: python3 -m venv .venv
 
 - name: Debian 10
-  shell: |
-    apt install build-essential;
-    .venv/bin/pip install --upgrade pip; 
-    .venv/bin/pip install pyqt6==6.5 pyinstaller;
+  block:
+    - name: Debian 10 build-essential
+      command: apt -y install build-essential
+    - name: Debian 10 pip
+      command: .venv/bin/pip install --upgrade pip 
+    - name: Debian 10 pyqt
+      shell: .venv/bin/pip install pyqt6==6.5 pyinstaller
   when: ansible_os_family == 'Debian' and ansible_lsb.release == '10'
 
 - name: Install in venv
