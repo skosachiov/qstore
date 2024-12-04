@@ -23,5 +23,5 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: debian-10
-          path: .venv/build/
+          path: build/
         
