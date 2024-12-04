@@ -1,0 +1,27 @@
+name: debian-10
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+    container: debian:10
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v4
+      - run: apt update
+      - run: apt -y install ansible
+      - run: /usr/bin/ansible-playbook ansible/build-deb.yml
+      
+      - uses: actions/upload-artifact@v4
+        with:
+          name: debian-10
+          path: ansible/build/
+        

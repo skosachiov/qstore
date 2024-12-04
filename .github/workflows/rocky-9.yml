@@ -1,0 +1,27 @@
+name: rocky-9
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+    container: rockylinux/rockylinux:9
+    timeout-minutes: 5
+    
+    steps:
+      - uses: actions/checkout@v4
+      - run: dnf -y install epel-release --nogpgcheck
+      - run: dnf -y install openssh-server --nogpgcheck
+      - run: dnf -y install ansible --nogpgcheck
+      - run: /usr/bin/ansible-playbook ansible/build-rpm.yml
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rocky-9
+          path: ansible/build/
