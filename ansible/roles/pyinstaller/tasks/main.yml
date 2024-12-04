@@ -1,17 +1,24 @@
-- name: Install binutils
+- name: Install all
+  package:
+    name:
+      - openbox
+      - libxcb*
+      - libxkbcommon*
+      - binutils
+    state: present
+
+- name: Install deb
   package:
     name:
       - python3-dev
       - python3-venv
-      - binutils
     state: present
   when: ansible_os_family in ['Debian']
 
-- name: Install binutils
+- name: Install rpm
   package:
     name:
       - python3-devel
-      - binutils
     state: present
   when: ansible_os_family in ['RedHat', 'Rocky']
 
@@ -23,14 +30,17 @@
     - name: Debian 10 build-essential
       command: apt -y install build-essential
     - name: Debian 10 pip
-      command: .venv/bin/pip install --upgrade pip 
+      command: .venv/bin/pip install --upgrade pip setuptools
     - name: Debian 10 pyqt
-      shell: .venv/bin/pip install pyqt6==6.5 pyinstaller
+      shell: .venv/bin/pip install pyqt6==6.5 pyinstaller requests
   when: ansible_os_family == 'Debian' and ansible_lsb.release == '10'
 
 - name: Install in venv
-  command: .venv/bin/pip install pyqt6 pyinstaller
+  command: .venv/bin/pip install pyqt6 pyinstaller requests
   when: not (ansible_os_family == 'Debian' and ansible_lsb.release == '10')
   
 - name: Create pkg
-  command: .venv/bin/pyinstaller ../qstore.py
+  command: .venv/bin/pyinstaller -F --hidden-import requests ../qstore.py
+
+- name: Mv up
+  command: mv dist/qstore ../

@@ -5,6 +5,9 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  release:
+    types:
+      - published
 
 jobs:
 
@@ -21,8 +24,20 @@ jobs:
       - run: sudo apt update
       - run: sudo apt -y install ansible
       - run: sudo /usr/bin/ansible-playbook ansible/build-deb.yml
+      - run: tar -czf qstore-${{github.workflow}}.tar.gz qstore post-server.py ansible/ html/
       
       - uses: actions/upload-artifact@v4
         with:
-          name: ubuntu-24.04
-          path: ansible/dist/
+          name: qstore-${{github.workflow}}.tar.gz
+          path: qstore-${{github.workflow}}.tar.gz
+
+      - uses: actions/upload-release-asset@v1
+        if: github.event_name == 'release'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: qstore-${{github.workflow}}.tar.gz
+          asset_name: qstore-${{github.workflow}}.tar.gz
+          asset_content_type: application/gzip
+          
