@@ -23,7 +23,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: debian-12
-          path:
+          path: |
             ansible/dist/
             ansible/qstore-playbook.yml
             ansible/qstore-systemd.yml
