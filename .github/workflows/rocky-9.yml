@@ -24,4 +24,8 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: rocky-9
-          path: ansible/dist/
+          path:
+            ansible/dist/
+            ansible/qstore-playbook.yml
+            ansible/qstore-systemd.yml
+            html/
