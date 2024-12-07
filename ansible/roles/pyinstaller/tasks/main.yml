@@ -25,12 +25,15 @@
     - name: Debian 10 pip
       command: .venv/bin/pip install --upgrade pip 
     - name: Debian 10 pyqt
-      shell: .venv/bin/pip install pyqt6==6.5 pyinstaller
+      shell: .venv/bin/pip install pyqt6==6.5 pyinstaller requests
   when: ansible_os_family == 'Debian' and ansible_lsb.release == '10'
 
 - name: Install in venv
-  command: .venv/bin/pip install pyqt6 pyinstaller
+  command: .venv/bin/pip install pyqt6 pyinstaller requests
   when: not (ansible_os_family == 'Debian' and ansible_lsb.release == '10')
   
 - name: Create pkg
-  command: .venv/bin/pyinstaller --hidden-import pyqt6.sip ../qstore.py
+  command: .venv/bin/pyinstaller -F --hidden-import requests ../qstore.py
+
+- name: Mv up
+  command: mv dist/qstore ../

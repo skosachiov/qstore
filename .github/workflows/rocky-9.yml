@@ -25,7 +25,8 @@ jobs:
         with:
           name: rocky-9
           path: |
-            ansible/dist/
+            qstore
             ansible/qstore-playbook.yml
             ansible/qstore-systemd.yml
             html/
+            post-server.py

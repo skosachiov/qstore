@@ -24,8 +24,9 @@ jobs:
         with:
           name: debian-10
           path: |
-            ansible/dist/
+            qstore
             ansible/qstore-playbook.yml
             ansible/qstore-systemd.yml
             html/
+            post-server.py
         
