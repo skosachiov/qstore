@@ -33,6 +33,16 @@ jobs:
             html/
             post-server.py
 
+  release:
+
+    runs-on: ubuntu-latest
+    container: debian:10
+    timeout-minutes: 5
+    if: github.event_name == 'release'
+    needs:
+      - build
+
+    steps:
       - uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ github.token }}
