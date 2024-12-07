@@ -33,4 +33,4 @@
   when: not (ansible_os_family == 'Debian' and ansible_lsb.release == '10')
   
 - name: Create pkg
-  command: .venv/bin/pyinstaller ../qstore.py
+  command: .venv/bin/pyinstaller --hidden-import pyqt6.sip ../qstore.py
