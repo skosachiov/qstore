@@ -40,7 +40,7 @@
   when: not (ansible_os_family == 'Debian' and ansible_lsb.release == '10')
   
 - name: Create pkg
-  command: .venv/bin/pyinstaller -F --hidden-import requests ../qstore.py
+  command: .venv/bin/pyinstaller -F --hidden-import requests --hidden-import logging ../qstore.py
 
 - name: Mv up
   command: mv dist/qstore ../
