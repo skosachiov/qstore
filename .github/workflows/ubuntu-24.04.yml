@@ -21,13 +21,19 @@ jobs:
       - run: sudo apt update
       - run: sudo apt -y install ansible
       - run: sudo /usr/bin/ansible-playbook ansible/build-deb.yml
+      - run: tar -czf qstore-$GITHUB_WORKFLOW.tar.gz qstore post-server.py ansible/ html/
       
       - uses: actions/upload-artifact@v4
         with:
-          name: ubuntu-24.04
-          path: |
-            qstore
-            ansible/qstore-playbook.yml
-            ansible/qstore-systemd.yml
-            html/
-            post-server.py
+          name: qstore-$GITHUB_WORKFLOW.tar.gz
+          path: qstore-$GITHUB_WORKFLOW.tar.gz
+
+      - uses: actions/upload-release-asset@v1
+        if: github.event_name == 'release'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: qstore-$GITHUB_WORKFLOW.tar.gz
+          asset_name: qstore-$GITHUB_WORKFLOW.tar.gz
+          asset_content_type: application/gzip

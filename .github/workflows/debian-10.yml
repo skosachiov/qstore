@@ -23,12 +23,12 @@ jobs:
       - run: apt update
       - run: apt -y install ansible
       - run: /usr/bin/ansible-playbook ansible/build-deb.yml
-      - run: tar -czf qstore-debian-10.tar.gz qstore post-server.py ansible/ html/
+      - run: tar -czf qstore-$GITHUB_WORKFLOW.tar.gz qstore post-server.py ansible/ html/
       
       - uses: actions/upload-artifact@v4
         with:
-          name: qstore-debian-10.tar.gz
-          path: qstore-debian-10.tar.gz
+          name: qstore-$GITHUB_WORKFLOW.tar.gz
+          path: qstore-$GITHUB_WORKFLOW.tar.gz
 
       - uses: actions/upload-release-asset@v1
         if: github.event_name == 'release'
@@ -36,7 +36,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: qstore-debian-10.tar.gz
-          asset_name: qstore-debian-10.tar.gz
+          asset_path: qstore-$GITHUB_WORKFLOW.tar.gz
+          asset_name: qstore-$GITHUB_WORKFLOW.tar.gz
           asset_content_type: application/gzip
             
