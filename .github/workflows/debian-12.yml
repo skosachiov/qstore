@@ -23,7 +23,7 @@ jobs:
       - run: apt update
       - run: apt -y install ansible
       - run: /usr/bin/ansible-playbook ansible/build-deb.yml
-      - run: tar -czf qstore-${{github.workflow}}.tar.gz qstore *.ui post-server.py ansible/ html/
+      - run: tar -czf qstore-${{github.workflow}}.tar.gz qstore qstore.conf *.ui post-server.py ansible/ html/
       
       - uses: actions/upload-artifact@v4
         with:
