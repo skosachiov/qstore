@@ -4,6 +4,13 @@ Application store for an import-independent corporate environment (Linux).
 Allows installation of certain software with user rights.
 Works via a system service (systemd unit). The user is limited by a "white" list of software.
 
+## Quick start
+
+* Download release tar.gz from Github
+* Untar release `tar -zxf <file>`
+* Start local server `python3 post-server.py &`
+* Start Qstore `./qstore`
+
 ## Features
 
 * Installing software from standard OS repositories. /etc/apt/* or /etc/dnf/*
