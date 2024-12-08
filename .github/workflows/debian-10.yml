@@ -5,6 +5,9 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  release:
+    types:
+      - published
 
 jobs:
 
@@ -15,13 +18,25 @@ jobs:
     timeout-minutes: 5
 
     steps:
+    
       - uses: actions/checkout@v4
       - run: apt update
       - run: apt -y install ansible
       - run: /usr/bin/ansible-playbook ansible/build-deb.yml
+      - run: tar -czf qstore-${{github.workflow}}.tar.gz qstore post-server.py ansible/ html/
       
       - uses: actions/upload-artifact@v4
         with:
-          name: debian-10
-          path: ansible/build/
-        
+          name: qstore-${{github.workflow}}.tar.gz
+          path: qstore-${{github.workflow}}.tar.gz
+
+      - uses: actions/upload-release-asset@v1
+        if: github.event_name == 'release'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: qstore-${{github.workflow}}.tar.gz
+          asset_name: qstore-${{github.workflow}}.tar.gz
+          asset_content_type: application/gzip
+            
