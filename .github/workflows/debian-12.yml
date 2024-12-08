@@ -14,30 +14,29 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    container: debian:12
+    container: debian:10
     timeout-minutes: 5
 
     steps:
+    
       - uses: actions/checkout@v4
       - run: apt update
       - run: apt -y install ansible
       - run: /usr/bin/ansible-playbook ansible/build-deb.yml
-
+      - run: tar -cfz qstore-debian-12.tar.gz qstore post-server.py ansible/ html/
+      
       - uses: actions/upload-artifact@v4
         with:
-          name: debian-12
-          path: |
-            qstore
-            ansible/qstore-playbook.yml
-            ansible/qstore-systemd.yml
-            html/
-            post-server.py
-      
+          name: qstore-debian-12.tar.gz
+          path: qstore-debian-12.tar.gz
+
       - uses: actions/upload-release-asset@v1
+        if: github.event_name == 'release'
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: qstore
-          asset_name: qstore-debian-12
-          asset_content_type: application/gzip      
+          asset_path: qstore-debian-12.tar.gz
+          asset_name: qstore-debian-12.tar.gz
+          asset_content_type: application/gzip
+            
