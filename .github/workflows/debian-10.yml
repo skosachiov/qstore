@@ -22,16 +22,12 @@ jobs:
       - run: apt update
       - run: apt -y install ansible
       - run: /usr/bin/ansible-playbook ansible/build-deb.yml
+      - run: zip qstore-debian-10.zip qstore post-server.py ansible/ html/ -r
       
       - uses: actions/upload-artifact@v4
         with:
           name: debian-10
-          path: |
-            qstore
-            ansible/qstore-playbook.yml
-            ansible/qstore-systemd.yml
-            html/
-            post-server.py
+          path: qstore-debian-10.zip
 
   release:
 
@@ -48,7 +44,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: qstore
-          asset_name: qstore-debian-10
+          asset_path: qstore-debian-10.zip
+          asset_name: qstore-debian-10.zip
           asset_content_type: application/gzip
             
