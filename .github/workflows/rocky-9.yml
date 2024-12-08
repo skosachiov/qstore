@@ -20,12 +20,12 @@ jobs:
       - run: dnf -y install openssh-server --nogpgcheck
       - run: dnf -y install ansible --nogpgcheck
       - run: /usr/bin/ansible-playbook ansible/build-rpm.yml
-      - run: tar -czf "qstore-$GITHUB_WORKFLOW.tar.gz" qstore post-server.py ansible/ html/
+      - run: tar -czf qstore-${{github.workflow}}.tar.gz qstore post-server.py ansible/ html/
       
       - uses: actions/upload-artifact@v4
         with:
-          name: "qstore-$GITHUB_WORKFLOW.tar.gz"
-          path: "qstore-$GITHUB_WORKFLOW.tar.gz"
+          name: qstore-${{github.workflow}}.tar.gz
+          path: qstore-${{github.workflow}}.tar.gz
 
       - uses: actions/upload-release-asset@v1
         if: github.event_name == 'release'
@@ -33,6 +33,6 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: "qstore-$GITHUB_WORKFLOW.tar.gz"
-          asset_name: "qstore-$GITHUB_WORKFLOW.tar.gz"
+          asset_path: qstore-${{github.workflow}}.tar.gz
+          asset_name: qstore-${{github.workflow}}.tar.gz
           asset_content_type: application/gzip
