@@ -1,0 +1,13 @@
+# https://www.redhat.com/en/blog/create-rpm-package
+
+- name: Packages need to be installed to build
+  package:
+    name:
+      - rpmdevtools
+      - rpmlint
+    stare: present
+
+- name: Create the file tree
+  command: rpmdev-setuptree
+
+- name: 
