@@ -8,6 +8,22 @@
     stare: present
 
 - name: Create the file tree
-  command: rpmdev-setuptree
+  file:
+    path: /root/rpmbuild/{{item}}
+    state: directory
+  with_items:
+    - BUILD
+    - BUILDROOT
+    - RPMS
+    - SOURCES
+    - SPECS
+    - SRPMS
 
-- name: 
+- name: Create buildroot
+  file:
+    path: /root/rpmbuild/BUILDROOT/{{item}}
+    state: directory
+  with_items:
+    - opt/qstore/
+    - opt/qstore/ansible
+    - opt/qstore/http
