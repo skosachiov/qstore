@@ -23,6 +23,8 @@ jobs:
       - run: dnf -y install openssh-server --nogpgcheck
       - run: dnf -y install ansible --nogpgcheck
       - run: /usr/bin/ansible-playbook ansible/build-rpm.yml
+        env:
+          VERSION: ${{ steps.get_version.outputs.VERSION }}
       - run: tar -czf qstore-${{github.workflow}}.tar.gz qstore qstore.conf *.ui post-server.py ansible/ html/
       
       - uses: actions/upload-artifact@v4

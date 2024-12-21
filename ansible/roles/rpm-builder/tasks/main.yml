@@ -1,4 +1,5 @@
 # https://www.redhat.com/en/blog/create-rpm-package
+# https://rpm-packaging-guide.github.io/
 
 - name: Packages need to be installed to build
   package:
