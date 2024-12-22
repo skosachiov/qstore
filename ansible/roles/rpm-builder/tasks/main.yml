@@ -6,7 +6,8 @@
     name:
       - rpmdevtools
       - rpmlint
-    stare: present
+      - rsync
+    state: present
 
 - name: Create the file tree
   file:
@@ -28,3 +29,19 @@
     - opt/qstore/
     - opt/qstore/ansible
     - opt/qstore/http
+
+- name: Copy to buildroot
+  synchronize:
+    src: "{{item[0]}}"
+    dest: "/root/rpmbuild/BUILDROOT/{{item[1]}}"
+  loop:
+    - ['/qstore/qstore', 'opt/qstore/']
+    - ['/qstore/qstore.conf', 'opt/qstore/']
+    - ['/qstore/ansible/qstore-playbook.yml', 'opt/qstore/ansible/']
+    - ['/qstore/ansible/qstore-systemd.yml', 'opt/qstore/ansible/']
+    - ['/qstore/html/', 'opt/qstore/html/']
+
+- name: Copy spec file
+  template:
+    src: qstore.spec.j2
+    dest: /root/rpmbuild/SPECS/qstore.spec
