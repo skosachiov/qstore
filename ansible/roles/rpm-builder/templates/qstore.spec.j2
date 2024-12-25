@@ -1,5 +1,5 @@
 Name:           qstore
-Version:        $VERSION
+Version:        {{lookup('env', 'VERSION')}}
 Release:        1%{?dist}
 Summary:        An application store for a vendor-independent enterprise environment
 BuildArch:      noarch
@@ -9,8 +9,6 @@ Source0:        %{name}-%{version}.tar.gz
 
 BuildRequires:  python
 Requires:       python
-
-BuildArch:      noarch
 
 %description
 An application store for a vendor-independent enterprise environment (Linux) allows installing specific software with user rights from standard repositories, flatpack repositories, individual package files or via encible tasks. Works via a system service (systemd module). The user is limited by a software "white" list and an approval system from the corporate security system.
@@ -30,5 +28,5 @@ rm -rf $RPM_BUILD_ROOT
 /*
 
 %changelog
-* %{build_timestamp} Pavel Kosachiov <pkosachiov@gmail.com> - $VERSION
-- Another release
+* {{"%a %b %d %Y" | strftime}} Another release
+- {{lookup('env', 'VERSION')}}

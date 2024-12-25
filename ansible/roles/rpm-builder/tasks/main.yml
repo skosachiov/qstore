@@ -45,3 +45,9 @@
   template:
     src: qstore.spec.j2
     dest: /root/rpmbuild/SPECS/qstore.spec
+
+- name: Copy spec file
+  command: tar -czf /root/rpmbuild/SOURCES/qstore-1.1.tar.gz /root/rpmbuild/BUILDROOT/
+
+- name: Lint spec file
+  command: rpmlint /root/rpmbuild/SPECS/qstore.spec
