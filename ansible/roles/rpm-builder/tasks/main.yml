@@ -9,6 +9,10 @@
       - rsync
     state: present
 
+- name: Set facts env
+  set_fact:
+    ver: "{{lookup('ansible.builtin.env', 'VERSION')}}"
+
 - name: Create the file tree
   file:
     path: /root/rpmbuild/{{item}}
@@ -26,20 +30,20 @@
     path: /root/rpmbuild/BUILDROOT/{{item}}
     state: directory
   with_items:
-    - opt/qstore/
-    - opt/qstore/ansible
-    - opt/qstore/http
+    - qstore-{{ver}}/opt/qstore/
+    - qstore-{{ver}}/opt/qstore/ansible
+    - qstore-{{ver}}/opt/qstore/http
 
 - name: Copy to buildroot
   synchronize:
     src: "{{item[0]}}"
     dest: "/root/rpmbuild/BUILDROOT/{{item[1]}}"
   loop:
-    - ['/qstore/qstore', 'opt/qstore/']
-    - ['/qstore/qstore.conf', 'opt/qstore/']
-    - ['/qstore/ansible/qstore-playbook.yml', 'opt/qstore/ansible/']
-    - ['/qstore/ansible/qstore-systemd.yml', 'opt/qstore/ansible/']
-    - ['/qstore/html/', 'opt/qstore/html/']
+    - ['/qstore/qstore', 'qstore-{{ver}}/opt/qstore/']
+    - ['/qstore/qstore.conf', 'qstore-{{ver}}/opt/qstore/']
+    - ['/qstore/ansible/qstore-playbook.yml', 'qstore-{{ver}}/opt/qstore/ansible/']
+    - ['/qstore/ansible/qstore-systemd.yml', 'qstore-{{ver}}/opt/qstore/ansible/']
+    - ['/qstore/html/', 'qstore-{{ver}}/opt/qstore/html/']
 
 - name: Copy spec file
   template:
@@ -47,7 +51,10 @@
     dest: /root/rpmbuild/SPECS/qstore.spec
 
 - name: Copy spec file
-  command: tar -czf /root/rpmbuild/SOURCES/qstore-1.1.tar.gz /root/rpmbuild/BUILDROOT/
+  command: tar -czf /root/rpmbuild/SOURCES/qstore-{{ver}}.tar.gz -C /root/rpmbuild/BUILDROOT .
 
 - name: Lint spec file
   command: rpmlint /root/rpmbuild/SPECS/qstore.spec
+
+- name: Build spec file
+  command: rpmbuild -bb /root/rpmbuild/SPECS/qstore.spec
