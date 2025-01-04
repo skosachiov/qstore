@@ -24,7 +24,7 @@ jobs:
       - run: dnf -y install ansible --nogpgcheck
       - run: /usr/bin/ansible-playbook ansible/build-rpm.yml
         env:
-          VER: ${{ github.ref_name }}
+          VERSION: ${{ github.ref_name }}
           GHW: ${{ github.workspace }}
       - run: tar -czf qstore-${{github.workflow}}.tar.gz qstore qstore.conf *.ui post-server.py ansible/ html/
       
