@@ -40,11 +40,11 @@
     src: "{{ghw}}/{{item[0]}}"
     dest: "/root/rpmbuild/BUILDROOT/qstore-{{ver}}/{{item[1]}}"
   loop:
-    - ['qstore/qstore', 'opt/qstore/']
-    - ['qstore/qstore.conf', 'opt/qstore/']
-    - ['qstore/ansible/qstore-playbook.yml', 'opt/qstore/ansible/']
-    - ['qstore/ansible/qstore-systemd.yml', 'opt/qstore/ansible/']
-    - ['qstore/html/', 'opt/qstore/html/']
+    - ['qstore', 'opt/qstore/']
+    - ['qstore.conf', 'opt/qstore/']
+    - ['ansible/qstore-playbook.yml', 'opt/qstore/ansible/']
+    - ['ansible/qstore-systemd.yml', 'opt/qstore/ansible/']
+    - ['html/', 'opt/qstore/html/']
 
 - name: Copy spec file
   template:
