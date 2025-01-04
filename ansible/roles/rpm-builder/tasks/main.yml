@@ -14,6 +14,17 @@
     version: "{{lookup('env', 'VERSION') if version is not defined else version}}"
     ghw: "{{lookup('env', 'GHW') if ghw is not defined else ghw}}"
 
+- name: Create github folder
+  file:
+    path: /github
+    state: directory
+
+- name: Link to home   
+  file:
+    src: /root
+    dest: /github/home
+    state: link 
+
 - name: Create the file tree
   file:
     path: /root/rpmbuild/{{item}}
