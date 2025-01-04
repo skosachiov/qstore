@@ -22,7 +22,7 @@ jobs:
       - run: dnf -y install epel-release --nogpgcheck
       - run: dnf -y install openssh-server --nogpgcheck
       - run: dnf -y install ansible --nogpgcheck
-      - run: /usr/bin/ansible-playbook ansible/build-rpm.yml
+      - run: /usr/bin/ansible-playbook -vv ansible/build-rpm.yml
         env:
           VERSION: ${{ github.ref_name }}
           GHW: ${{ github.workspace }}
@@ -43,3 +43,12 @@ jobs:
           asset_name: qstore-${{github.workflow}}.tar.gz
           asset_content_type: application/gzip
           
+      - uses: actions/upload-release-asset@v1
+        if: github.event_name == 'release'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: rpmbuild/RPMS/qstore-${{github.ref_name}}.rpm
+          asset_name: qstore-${{github.ref_name}}.rpm
+          asset_content_type: application/octet-stream
