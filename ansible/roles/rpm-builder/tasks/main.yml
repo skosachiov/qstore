@@ -11,7 +11,8 @@
 
 - name: Set facts env
   set_fact:
-    ver: "{{lookup('ansible.builtin.env', 'VERSION')}}"
+    ver: "{{lookup('ansible.builtin.env', 'VER')}}"
+    ghw: "{{lookup('ansible.builtin.env', 'GHW')}}"
 
 - name: Create the file tree
   file:
@@ -36,14 +37,14 @@
 
 - name: Copy to buildroot
   synchronize:
-    src: "{{item[0]}}"
-    dest: "/root/rpmbuild/BUILDROOT/{{item[1]}}"
+    src: "{{ghw}}/{{item[0]}}"
+    dest: "/root/rpmbuild/BUILDROOT/qstore-{{ver}}/{{item[1]}}"
   loop:
-    - ['/qstore/qstore', 'qstore-{{ver}}/opt/qstore/']
-    - ['/qstore/qstore.conf', 'qstore-{{ver}}/opt/qstore/']
-    - ['/qstore/ansible/qstore-playbook.yml', 'qstore-{{ver}}/opt/qstore/ansible/']
-    - ['/qstore/ansible/qstore-systemd.yml', 'qstore-{{ver}}/opt/qstore/ansible/']
-    - ['/qstore/html/', 'qstore-{{ver}}/opt/qstore/html/']
+    - ['qstore/qstore', 'opt/qstore/']
+    - ['qstore/qstore.conf', 'opt/qstore/']
+    - ['qstore/ansible/qstore-playbook.yml', 'opt/qstore/ansible/']
+    - ['qstore/ansible/qstore-systemd.yml', 'opt/qstore/ansible/']
+    - ['qstore/html/', 'opt/qstore/html/']
 
 - name: Copy spec file
   template:

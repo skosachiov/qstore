@@ -24,8 +24,8 @@ jobs:
       - run: dnf -y install ansible --nogpgcheck
       - run: /usr/bin/ansible-playbook ansible/build-rpm.yml
         env:
-          # VERSION: ${{ github.ref_name }}
-          VERSION: "1.1"
+          VER: ${{ github.ref_name }}
+          GHW: ${{ github.workspace }}
       - run: tar -czf qstore-${{github.workflow}}.tar.gz qstore qstore.conf *.ui post-server.py ansible/ html/
       
       - uses: actions/upload-artifact@v4
