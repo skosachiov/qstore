@@ -1,8 +1,8 @@
 Name:           qstore
-Version:        {{lookup('env', 'VER')}}
+Version:        {{version}}
 Release:        1%{?dist}
 Summary:        An application store for a vendor-independent enterprise environment
-BuildArch:      x86_64
+ExclusiveArch:  x86_64
 
 License:        GPL
 Source0:        %{name}-%{version}.tar.gz
@@ -31,4 +31,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %changelog
 * {{"%a %b %d %Y" | strftime}} Another release
-- {{lookup('env', 'VER')}}
+- {{version}}

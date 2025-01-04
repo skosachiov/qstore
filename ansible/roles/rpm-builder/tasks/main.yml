@@ -11,8 +11,8 @@
 
 - name: Set facts env
   set_fact:
-    ver: "{{lookup('ansible.builtin.env', 'VER')}}"
-    ghw: "{{lookup('ansible.builtin.env', 'GHW')}}"
+    version: "{{lookup('env', 'VERSION') if version is not defined else version}}"
+    ghw: "{{lookup('env', 'GHW') if ghw is not defined else ghw}}"
 
 - name: Create the file tree
   file:
@@ -31,14 +31,14 @@
     path: /root/rpmbuild/BUILDROOT/{{item}}
     state: directory
   with_items:
-    - qstore-{{ver}}/opt/qstore/
-    - qstore-{{ver}}/opt/qstore/ansible
-    - qstore-{{ver}}/opt/qstore/http
+    - qstore-{{version}}/opt/qstore/
+    - qstore-{{version}}/opt/qstore/ansible
+    - qstore-{{version}}/opt/qstore/http
 
 - name: Copy to buildroot
   synchronize:
     src: "{{ghw}}/{{item[0]}}"
-    dest: "/root/rpmbuild/BUILDROOT/qstore-{{ver}}/{{item[1]}}"
+    dest: "/root/rpmbuild/BUILDROOT/qstore-{{version}}/{{item[1]}}"
   loop:
     - ['qstore', 'opt/qstore/']
     - ['qstore.conf', 'opt/qstore/']
@@ -51,8 +51,8 @@
     src: qstore.spec.j2
     dest: /root/rpmbuild/SPECS/qstore.spec
 
-- name: Copy spec file
-  command: tar -czf /root/rpmbuild/SOURCES/qstore-{{ver}}.tar.gz -C /root/rpmbuild/BUILDROOT .
+- name: Tar buildroot
+  command: tar -czf /root/rpmbuild/SOURCES/qstore-{{version}}.tar.gz -C /root/rpmbuild/BUILDROOT .
 
 - name: Lint spec file
   command: rpmlint /root/rpmbuild/SPECS/qstore.spec
