@@ -1,0 +1,34 @@
+Name:           qstore
+Version:        {{lookup('env', 'VERSION')}}
+Release:        1%{?dist}
+Summary:        An application store for a vendor-independent enterprise environment
+BuildArch:      x86_64
+
+License:        GPL
+Source0:        %{name}-%{version}.tar.gz
+
+BuildRequires:  python3
+Requires:       python3
+
+%description
+An application store for a vendor-independent enterprise environment (Linux) allows installing specific software with user rights from standard repositories, flatpack repositories, individual package files or via encible tasks. Works via a system service (systemd module). The user is limited by a software "white" list and an approval system from the corporate security system.
+
+%define _binaries_in_noarch_packages_terminate_build   0
+
+%prep
+%setup -q
+
+%install
+rm -rf $RPM_BUILD_ROOT
+mkdir $RPM_BUILD_ROOT
+cp -a * $RPM_BUILD_ROOT/
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files
+/*
+
+%changelog
+* {{"%a %b %d %Y" | strftime}} Another release
+- {{lookup('env', 'VERSION')}}
