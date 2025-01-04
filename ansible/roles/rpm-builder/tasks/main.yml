@@ -13,21 +13,11 @@
   set_fact:
     version: "{{lookup('env', 'VERSION') if version is not defined else version}}"
     ghw: "{{lookup('env', 'GHW') if ghw is not defined else ghw}}"
-
-- name: Create github folder
-  file:
-    path: /github
-    state: directory
-
-- name: Link to home   
-  file:
-    src: /root
-    dest: /github/home
-    state: link 
+    home: "{{lookup('env', 'HOME') if home is not defined else home}}"
 
 - name: Create the file tree
   file:
-    path: /root/rpmbuild/{{item}}
+    path: "{{home}}/rpmbuild/{{item}}"
     state: directory
   with_items:
     - BUILD
@@ -39,7 +29,7 @@
 
 - name: Create buildroot
   file:
-    path: /root/rpmbuild/BUILDROOT/{{item}}
+    path: "{{home}}/rpmbuild/BUILDROOT/{{item}}"
     state: directory
   with_items:
     - qstore-{{version}}/opt/qstore/
@@ -49,7 +39,7 @@
 - name: Copy to buildroot
   synchronize:
     src: "{{ghw}}/{{item[0]}}"
-    dest: "/root/rpmbuild/BUILDROOT/qstore-{{version}}/{{item[1]}}"
+    dest: "{{home}}/rpmbuild/BUILDROOT/qstore-{{version}}/{{item[1]}}"
   loop:
     - ['qstore', 'opt/qstore/']
     - ['qstore.conf', 'opt/qstore/']
@@ -60,13 +50,14 @@
 - name: Copy spec file
   template:
     src: qstore.spec.j2
-    dest: /root/rpmbuild/SPECS/qstore.spec
+    dest: "{{home}}/rpmbuild/SPECS/qstore.spec"
 
 - name: Tar buildroot
-  command: tar -czf /root/rpmbuild/SOURCES/qstore-{{version}}.tar.gz -C /root/rpmbuild/BUILDROOT .
+  command: tar -czf {{home}}/rpmbuild/SOURCES/qstore-{{version}}.tar.gz -C {{home}}/rpmbuild/BUILDROOT .
 
 - name: Lint spec file
-  command: rpmlint /root/rpmbuild/SPECS/qstore.spec
+  command: rpmlint {{home}}/rpmbuild/SPECS/qstore.spec
 
 - name: Build spec file
-  command: rpmbuild -bb /root/rpmbuild/SPECS/qstore.spec
+  command: rpmbuild -bb {{home}}/rpmbuild/SPECS/qstore.spec
+  
