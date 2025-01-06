@@ -27,7 +27,7 @@ jobs:
           VERSION: ${{ github.ref_name }}
           GHW: ${{ github.workspace }}
       - run: tar -czf qstore-${{github.workflow}}.tar.gz qstore qstore.conf *.ui post-server.py ansible/ html/
-      - run: cp -f rpmbuild/RPMS/x86_64/qstore-${{github.ref_name}}-1.el9.x86_64.rpm .
+      - run: cp -f ${{github.workspace}}/rpmbuild/RPMS/x86_64/qstore-${{github.ref_name}}-1.el9.x86_64.rpm .
 
       - uses: actions/upload-artifact@v4
         with:
